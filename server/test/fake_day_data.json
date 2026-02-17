@@ -1,0 +1,14 @@
+[
+  { "timestamp": "2026-02-17T00:00:00Z", "temperature": 17.5, "humidity": 55 },
+  { "timestamp": "2026-02-17T01:00:00Z", "temperature": 18.2, "humidity": 57 },
+  { "timestamp": "2026-02-17T02:00:00Z", "temperature": 19.0, "humidity": 60 },
+  { "timestamp": "2026-02-17T03:00:00Z", "temperature": 20.1, "humidity": 62 },
+  { "timestamp": "2026-02-17T04:00:00Z", "temperature": 21.3, "humidity": 63 },
+  { "timestamp": "2026-02-17T05:00:00Z", "temperature": 22.0, "humidity": 65 },
+  { "timestamp": "2026-02-17T06:00:00Z", "temperature": 23.1, "humidity": 66 },
+  { "timestamp": "2026-02-17T07:00:00Z", "temperature": 24.0, "humidity": 67 },
+  { "timestamp": "2026-02-17T08:00:00Z", "temperature": 25.2, "humidity": 68 },
+  { "timestamp": "2026-02-17T09:00:00Z", "temperature": 26.5, "humidity": 70 },
+  { "timestamp": "2026-02-17T10:00:00Z", "temperature": 27.1, "humidity": 72 },
+  { "timestamp": "2026-02-17T11:00:00Z", "temperature": 28.0, "humidity": 74 }
+]
