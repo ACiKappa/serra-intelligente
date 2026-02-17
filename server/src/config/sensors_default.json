@@ -1,0 +1,7 @@
+{
+  "temperature": true,
+  "humidity": true,
+  "co2": false,
+  "light": false,
+  "soilMoisture": false
+}
