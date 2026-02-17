@@ -1,1 +1,56 @@
+module.exports = [
+  {
+    name: "Critico",
+    priority: 1,
+    conditions: (data, t) => (
+      data.maxTemp > t.temperature.critical.min ||
+      data.maxHumidity > t.humidity.critical.min
+    )
+  },
+
+  {
+    name: "Caldo",
+    priority: 2,
+    conditions: (data, t) => (
+      data.maxTemp >= t.temperature.warning.min &&
+      data.maxTemp < t.temperature.warning.max
+    )
+  },
+
+  {
+    name: "Freddo",
+    priority: 3,
+    conditions: (data, t) => (
+      data.minTemp < t.temperature.low.max
+    )
+  },
+
+  {
+    name: "Subottimale",
+    priority: 4,
+    conditions: (data, t) => (
+      (data.avgTemp >= t.temperature.suboptimal.min &&
+       data.avgTemp < t.temperature.suboptimal.max) ||
+      (data.avgHumidity >= t.humidity.suboptimal.min &&
+       data.avgHumidity < t.humidity.suboptimal.max)
+    )
+  },
+
+  {
+    name: "Ottimale",
+    priority: 5,
+    conditions: (data, t) => (
+      data.avgTemp >= t.temperature.optimal.min &&
+      data.avgTemp < t.temperature.optimal.max &&
+      data.avgHumidity >= t.humidity.optimal.min &&
+      data.avgHumidity < t.humidity.optimal.max
+    )
+  },
+
+  {
+    name: "Normale",
+    priority: 6,
+    conditions: () => true // fallback
+  }
+];
 
