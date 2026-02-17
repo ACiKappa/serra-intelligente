@@ -1,4 +1,4 @@
-module.exports = {
+{
   temperature: {
     low: { max: 12 },                 // troppo freddo
     suboptimal: { min: 12, max: 18 }, // freddo ma non critico
@@ -14,5 +14,5 @@ module.exports = {
     warning: { min: 70, max: 85 },
     critical: { min: 85 }
   }
-};
+}
 
