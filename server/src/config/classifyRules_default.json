@@ -1,4 +1,4 @@
-  {
+{  {
     name: "Critico",
     priority: 1,
     conditions: (data, t) => (
@@ -50,4 +50,5 @@
     name: "Normale",
     priority: 6,
     conditions: () => true // fallback
+  }
   }
