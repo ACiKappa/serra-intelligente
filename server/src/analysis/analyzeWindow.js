@@ -1,6 +1,6 @@
 const loadThresholds = require("../config/loadThresholds");
 const rules = require("../config/classifyRules_default");
-const classifyDay = require("./classifyDay");
+const classifyWindow = require("./classifyWindow");
 
 // Calcolo media
 function avg(values) {
@@ -40,9 +40,9 @@ function correlation(x, y) {
 }
 
 // Funzione principale
-function analyzeDay(measures) {
+function analyzeWindow(measures) {
   if (!measures || measures.length === 0) {
-    return { error: "Nessun dato disponibile per questo giorno" };
+    return { error: "Nessun dato disponibile per questo periodo" };
   }
 
   const temps = measures.map(m => m.temperature);
@@ -68,7 +68,7 @@ function analyzeDay(measures) {
   const thresholds = loadThresholds();
 
   // Classificazione finale
-  const className = classifyDay(data, thresholds, rules);
+  const className = classifyWindow(data, thresholds, rules);
 
   return {
     ...data,
@@ -77,4 +77,4 @@ function analyzeDay(measures) {
   };
 }
 
-module.exports = analyzeDay;
+module.exports = analyzeWindow;
