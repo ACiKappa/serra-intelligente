@@ -1,4 +1,4 @@
-function classifyDay(data, thresholds, rules) {
+function classifyWindow(data, thresholds, rules) {
   // Ordina le regole per priorità (1 = più importante)
   const sorted = rules.sort((a, b) => a.priority - b.priority);
 
@@ -13,4 +13,4 @@ function classifyDay(data, thresholds, rules) {
   return "Non classificato";
 }
 
-module.exports = classifyDay;
+module.exports = classifyWindow;
