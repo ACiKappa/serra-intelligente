@@ -1,0 +1,42 @@
+{
+  "parameters": {
+    "temperature": {
+      "enabled": true,
+      "weight": 0.6,
+      "optimalRange": "fromThresholds",
+      "deviationMethod": "absolute" 
+    },
+    "humidity": {
+      "enabled": true,
+      "weight": 0.4,
+      "optimalRange": "fromThresholds",
+      "deviationMethod": "absolute"
+    }
+  },
+
+  "coefficients": {
+    "stressIncrease": 1.2,
+    "stressDecrease": 0.5,
+    "historicalMemory": 0.85
+  },
+
+  "calculation": {
+    "method": "weightedDeviation",
+    "timeWindowHours": 3,
+    "normalize": true
+  },
+
+  "limits": {
+    "min": 0,
+    "max": 100
+  },
+
+  "notes": {
+    "optimalRange": "fromThresholds = usa i valori min/max definiti in thresholds_default.json",
+    "deviationMethod": "absolute = distanza dal range ottimale; percent = deviazione percentuale",
+    "historicalMemory": "0.0 = nessuna memoria; 1.0 = memoria infinita",
+    "stressIncrease": "moltiplicatore quando fuori range",
+    "stressDecrease": "quanto recupera quando dentro range",
+    "method": "weightedDeviation = somma pesata delle deviazioni dei parametri"
+  }
+}
