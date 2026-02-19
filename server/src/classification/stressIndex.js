@@ -16,13 +16,18 @@ function computeDeviation(value, optimalRange) {
   return 0;
 }
 
+// Recupera il range ottimale da thresholds o dal JSON
 function getOptimalRange(param) {
-  if (config.parameters[param].optimalRange === "fromThresholds") {
+  const setting = config.parameters[param].optimalRange;
+  
+  if (setting === "fromThresholds") {
     return thresholds[param].optimal;
   }
-  return config.parameters[param].optimalRange;
+  
+  return setting;
 }
 
+// Calcola lo stress per un singolo parametro
 function updateStressForParam(param, stats) {
   if (!config.parameters[param].enabled) return 0;
 
@@ -46,6 +51,7 @@ function updateStressForParam(param, stats) {
   return newStress;
 }
 
+// Calcola lo stress totale
 function updateStressIndex(stats) {
   const stressTemp = updateStressForParam("temperature", stats);
   const stressHum = updateStressForParam("humidity", stats);
